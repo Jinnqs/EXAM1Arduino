@@ -1,0 +1,46 @@
+// C++ code
+//variables
+int redButton = 3; //pin #'s
+int greenButton = 4;
+int blueButton = 5;
+int resetButton = 2;
+int redLED = 9;
+int greenLED = 10;
+int blueLED = 11;
+
+void setup() {
+  pinMode(9, OUTPUT); // red led gpio
+  pinMode(10, OUTPUT); // green led gpio
+  pinMode(11, OUTPUT); // blue led gpio
+  
+  pinMode(3,INPUT_PULLUP); // red button
+  pinMode(4,INPUT_PULLUP); // green button
+  pinMode(5, INPUT_PULLUP); // blue button
+  pinMode(2, INPUT_PULLUP); //reset button
+}
+void loop() {
+  //read the buttons
+  int r = digitalRead(3);
+  int g = digitalRead(4);
+  int b = digitalRead(5);
+  int reset = digitalRead(2);
+  
+
+
+  //if button is pressed turn color on
+  if (r == 0){
+  analogWrite(9,14);
+  }
+  else if (g == 0){
+  analogWrite(10,14);
+  }
+  else if (b == 0) {
+  analogWrite(11,14);
+  }
+  else if (reset == 0) {
+  analogWrite(2,0);
+
+}
+} 
+  
+  
